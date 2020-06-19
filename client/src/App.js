@@ -1,5 +1,5 @@
 import React from 'react';
-import model from './model'
+import model from './models/model'
 import { StoreProvider, createStore } from 'easy-peasy';
 import Comps from './components/Comps';
 import AddComp from './components/AddComp';

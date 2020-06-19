@@ -4,14 +4,23 @@ import axios from 'axios';
 const url = '/api/comps';
 
 export default {
+    // State
     comps: [],
 
-    //Thunks
+    // Thunks
     getComps: thunk(async actions => {
+        // Handle WS Call   
         const res = await axios.get(url);
         const comps = res.data;
 
+        // Handle state control
         actions.setComps(comps);
+    }),
+    addComp: thunk(async (actions, comp) => {
+        // Handle WS Call
+        await axios.post(url, comp);
+
+        actions.getComps();
     }),
 
     // Actions

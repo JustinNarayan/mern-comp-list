@@ -4,11 +4,11 @@ import { useStoreActions } from 'easy-peasy';
 const AddComp = () => {
     const [name, setName] = useState('');
 
-    const add = useStoreActions(actions => actions.add);
+    const addComp = useStoreActions(actions => actions.addComp);
 
     const onSubmit = (e) => {
         e.preventDefault();
-        add({
+        addComp({
             name
         })
     }

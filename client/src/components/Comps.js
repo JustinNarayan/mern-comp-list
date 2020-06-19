@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React, { Fragment, useEffect } from 'react';
 import { useStoreState, useStoreActions } from 'easy-peasy'; 
 import Comp from './Comp';
@@ -6,10 +7,11 @@ const Comps = () => {
     const comps = useStoreState(state => state.comps);
     const getComps = useStoreActions(actions => actions.getComps);
 
+    // Use Effect will execute certain code whenever a variable in the array is updated
     useEffect(() => {
         getComps();
-        //eslint-disable-next-line
-    }, []);
+        console.log("Called");
+    }, [getComps]);
 
     return (
         <Fragment>
