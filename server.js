@@ -4,7 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 // Define Routes
-const comps = require('./routes/api/comps');
+const comps = require('./routes/api/compRoute');
 
 const app = express();
 
