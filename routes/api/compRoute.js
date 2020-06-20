@@ -42,7 +42,7 @@ router.delete('/:id', async (req, res) => {
 
 // Helper method to access the database
 async function loadCompsCollection() {
-    const client = await mongodb.MongoClient.connect(require('../../config/keys').mongoURI, {
+    const client = await mongodb.MongoClient.connect(process.env.URI || require('../../config/keys').mongoURI, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     });
