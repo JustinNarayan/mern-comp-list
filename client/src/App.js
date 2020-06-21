@@ -3,7 +3,7 @@ import model from './models/model'
 import { StoreProvider, createStore } from 'easy-peasy';
 import Comps from './components/Comps';
 import AddComp from './components/AddComp';
-import './App.css';
+import './assets/css/style.css';
 
 const store = createStore(model);
 
