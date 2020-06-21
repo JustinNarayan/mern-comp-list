@@ -1,6 +1,6 @@
-import modelComps from './modelComps';
+import compModel from './compModel';
 
-const { comps, getComps, addComp, setComps, add, remove } = modelComps;
+const { comps, getComps, addComp, removeComp, setComps } = compModel;
 
 export default {
     // State
@@ -9,9 +9,8 @@ export default {
     // Thunks
     getComps,
     addComp,
+    removeComp,
 
     // Actions
-    setComps,
-    add,
-    remove
+    setComps
 };

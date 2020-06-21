@@ -2,14 +2,12 @@ import React from 'react';
 import { useStoreActions } from 'easy-peasy';
 
 const Comp = ({comp}) => {
-    const { remove } = useStoreActions(actions => ({
-        remove: actions.remove 
-    }));
+    const removeComp = useStoreActions(actions => actions.removeComp);
 
     return (
         <div>
             <span>{comp.name}</span>
-            <button onClick={() => remove(comp.id)}>
+            <button onClick={() => removeComp(comp._id)}>
                 &times;
             </button>
         </div>

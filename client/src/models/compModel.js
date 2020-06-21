@@ -1,7 +1,7 @@
 import { action, thunk } from 'easy-peasy';
 import axios from 'axios';
 
-const url = '/api/comps';
+const url = '/api/comps/';
 
 export default {
     // State
@@ -22,16 +22,15 @@ export default {
 
         actions.getComps();
     }),
+    removeComp: thunk(async (actions, id) => {
+        // Handle WS Call
+        await axios.delete(`${url}${id}`);
+
+        actions.getComps();
+    }),
 
     // Actions
     setComps: action((state, comps) => {
         state.comps = comps;
-    }),
-    add: action((state, comp) => {
-        comp.id = state.comps.length + 1;
-        state.comps = [...state.comps, comp];
-    }),
-    remove: action((state, id) => {
-        state.comps = state.comps.filter(comp => comp.id !== id);
     })
 };
