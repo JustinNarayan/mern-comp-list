@@ -1,4 +1,12 @@
 $theme-colors: (
     // Add custom colors or modify existing colors like this
-    "custom": yellow
+    "menu-primary": #3d5bdd,
+    "menu-text": #f0f8ff
 );
+
+//@debug map-get($theme-colors, "menu");
+
+:export {
+   menuPrimary: map-get($theme-colors, "menu-primary");
+   menuText: map-get($theme-colors, "menu-text");
+}

@@ -16,7 +16,14 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     const comps = await loadCompsCollection();
     await comps.insertOne({
-        name: req.body.name
+        name: req.body.name,
+        district: req.body.district,
+        dateStart: req.body.dateStart,
+        dateEnd: req.body.dateEnd,
+        venue: req.body.venue,
+        city: req.body.city,
+        region: req.body.region,
+        country: req.body.country
     });
     
     // Send the created object
