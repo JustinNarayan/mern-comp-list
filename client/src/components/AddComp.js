@@ -83,6 +83,7 @@ const AddComp = () => {
       padding: 0,
    };
 
+   // Create Component
    return (
       <div>
          <Button color='menu-primary' onClick={toggleModal}>
