@@ -1,8 +1,9 @@
 import React from "react";
 import { Container } from "reactstrap";
 import style from "../assets/scss/_custom.scss";
+import PropTypes from 'prop-types';
 
-const Comp = ({ comp }) => {
+const Comp = ({comp}) => {
    // Define methods
    const convertDate = (date) => {
       date = new Date(date);
@@ -101,5 +102,9 @@ const Comp = ({ comp }) => {
       </tr>
    );
 };
+
+Comp.propTypes = {
+   comp: PropTypes.object
+}
 
 export default Comp;
